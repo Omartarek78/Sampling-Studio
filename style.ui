@@ -1,0 +1,1306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1340</width>
+    <height>977</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+padding: 0px;
+margin: 0;
+font: 12pt &quot;Calibri&quot;;
+
+}
+
+QMainWindow {
+   /* background-color:#ececec;*/
+ background-color:#e9e7e7;
+}
+QPushButton, QToolButton, QCommandLinkButton{
+    padding: 0 5px 0 5px;
+    border-style: solid;
+    border-top-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #c1c9cf, stop:1 #d2d8dd);
+    border-right-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
+    border-bottom-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
+    border-left-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
+    border-width: 2px;
+    border-radius: 10px;
+    color: #616161;
+    background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #fbfdfd, stop:0.5 #ffffff, stop:1 #fbfdfd);
+padding: 5px;
+}
+QPushButton::default, QToolButton::default, QCommandLinkButton::default{
+    border: 2px solid transparent;
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #84afe5, stop:1 #1168e4);
+}
+QPushButton:hover, QToolButton:hover, QCommandLinkButton:hover{
+    color: #fefafa;
+}
+QPushButton:pressed, QToolButton:pressed, QCommandLinkButton:pressed{
+    color: #fefafa;
+    background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #ffffff, stop:0.5 #fbfdfd, stop:1 #ffffff);
+}
+QPushButton:disabled, QToolButton:disabled, QCommandLinkButton:disabled{
+    color: #616161;
+    background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #dce7eb, stop:0.5 #e0e8eb, stop:1 #dee7ec);
+}
+QLineEdit, QTextEdit, QPlainTextEdit, QSpinBox, QDoubleSpinBox, QTimeEdit, QDateEdit, QDateTimeEdit {
+    border-width: 2px;
+    border-radius: 8px;
+    border-style: solid;
+    border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
+    border-right-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
+    border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #c1c9cf, stop:1 #d2d8dd);
+    border-left-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
+    background-color: #f4f4f4;
+    color: #3d3d3d;
+}
+QLineEdit:focus, QTextEdit:focus, QPlainTextEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QTimeEdit:focus, QDateEdit:focus, QDateTimeEdit:focus {
+    border-width: 2px;
+    border-radius: 8px;
+    border-style: solid;
+    border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 #85b7e3, stop:1 #9ec1db);
+    border-right-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #85b7e3, stop:1 #9ec1db);
+    border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #85b7e3, stop:1 #9ec1db);
+    border-left-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:0, stop:0 #85b7e3, stop:1 #9ec1db);
+    background-color: #f4f4f4;
+    color: #3d3d3d;
+}
+
+QLineEdit:disabled, QTextEdit:disabled, QPlainTextEdit:disabled, QSpinBox:disabled, QDoubleSpinBox:disabled, QTimeEdit:disabled, QDateEdit:disabled, QDateTimeEdit:disabled {
+    color: #b9b9b9;
+}
+
+QSlider{
+margin-left: 10px
+}
+
+QSlider::groove {
+    border: 1px solid #bbbbbb;
+    background-color: #52595d;
+    border-radius: 4px;
+}
+
+QSlider::groove:horizontal {
+    height: 6px;
+}
+
+QSlider::groove:vertical {
+    width: 6px;
+}
+
+QSlider::handle:horizontal {
+    background: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(207,207,207);
+    width: 12px;
+    margin: -5px 0;
+    border-radius: 7px;
+}
+
+QSlider::handle:vertical {
+    background: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(207,207,207);
+    height: 12px;
+    margin: 0 -5px;
+    border-radius: 7px;
+}
+
+QSlider::add-page, QSlider::sub-page {
+    border: 1px transparent;
+    background-color: #52595d;
+    border-radius: 4px;
+}
+
+QSlider::add-page:horizontal {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #ddd5d5, stop:0.5 #dad3d3, stop:1 #ddd5d5);
+}
+
+QSlider::sub-page:horizontal {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #60adc5, stop:0.5 #3c9ebe, stop:1 #317892);
+}
+
+QSlider::add-page:vertical {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #467dd1, stop:0.5 #3b88fc, stop:1 #467dd1);
+}
+
+QSlider::sub-page:vertical {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #ddd5d5, stop:0.5 #dad3d3, stop:1 #ddd5d5);
+}
+
+QSlider::add-page:horizontal:disabled, QSlider::sub-page:horizontal:disabled, QSlider::add-page:vertical:disabled, QSlider::sub-page:vertical:disabled {
+    background: #b9b9b9;
+}
+
+QComboBox, QFontComboBox {
+    border-width: 2px;
+    border-radius: 8px;
+    border-style: solid;
+    border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
+    border-right-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
+    border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #c1c9cf, stop:1 #d2d8dd);
+    border-left-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
+    background-color: #f4f4f4;
+    color: #272727;
+    padding-left: 5px;
+}
+
+QComboBox:editable, QComboBox:!editable, QComboBox::drop-down:editable, QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background: #ffff;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+    color: #272727;
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+QComboBox::down-arrow {
+    image: url(:/qss_icons/dark/rc/arrow_down_pressed.png);
+width:15px;
+height: 19px
+}
+
+QComboBox::down-arrow:on {
+    top: 1px;
+    left: 1px;
+}
+
+QComboBox QAbstractItemView {
+    border: 1px solid darkgray;
+    border-radius: 8px;
+    selection-background-color: #dadada;
+    selection-color: #272727;
+    color: #272727;
+    background: white;
+}
+
+QLabel, QCheckBox, QRadioButton {
+    color: #272727;
+}
+
+QCheckBox {
+    padding: 2px;
+}
+
+QCheckBox:disabled, QRadioButton:disabled {
+    color: #808086;
+    padding: 2px;
+}
+
+QCheckBox:hover {
+    border-radius:4px;
+    border-style:solid;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    border-width:1px;
+    border-color: transparent;
+}
+QCheckBox::indicator:checked {
+    image: url(/usr/share/icons/Adwaita/16x16/actions/object-select-symbolic.symbolic.png);
+    height: 15px;
+    width: 15px;
+    border-style:solid;
+    border-width: 1px;
+    border-color: #48a5fd;
+    color: #ffffff;
+    border-radius: 3px;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #48a5fd, stop:0.5 #329cfb, stop:1 #48a5fd);
+}
+
+QCheckBox::indicator:unchecked {
+    
+    height: 15px;
+    width: 15px;
+    border-style:solid;
+    border-width: 1px;
+    border-color: #48a5fd;
+    border-radius: 3px;
+    background-color: #fbfdfa;
+}
+
+
+
+QLCDNumber{
+  background-color: #fff;
+  border: 1.4px solid #2596be;
+  border-width: 1.4px;
+  border-radius: 7px;
+  color: #000;
+}
+
+QMenuBar {
+    background-color: #ececec;
+}
+
+QMenuBar::item {
+    color: #616161;
+    spacing: 3px;
+    padding: 1px 4px;
+    background-color: #ececec;
+}
+
+QMenuBar::item:selected {
+    background-color: #dadada;
+    color: #3d3d3d;
+}
+QMenu {
+    background-color: #ececec;
+}
+QMenu::item:selected {
+    background-color: #dadada;
+    color: #3d3d3d;
+}
+QMenu::item {
+    color: #616161;;
+    background-color: #e0e0e0;
+}
+QTabWidget {
+    color:rgb(0,0,0);
+    background-color:#000000;
+}
+QTabWidget::pane {
+    border-color: #050a0e;
+    background-color: #e0e0e0;
+    border-width: 1px;
+    border-radius: 4px;
+    position: absolute;
+    top: -0.5em;
+    padding-top: 0.5em;
+}
+
+QTabWidget::tab-bar {
+    alignment: center;
+}
+
+QTabBar::tab {
+    border-bottom: 1px solid #c0c0c0;
+    padding: 3px;
+    color: #272727;
+    background-color: #fefefc;
+    margin-left:0px;
+}
+QTabBar::tab:!last {
+    border-right: 1px solid;
+    border-right-color: #c0c0c0;
+    border-bottom-color: #c0c0c0;
+}
+QTabBar::tab:first {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+QTabBar::tab:last {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+QTabBar::tab:selected, QTabBar::tab:last:selected, QTabBar::tab:hover {
+    color: #FFFFFF;
+    background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #84afe5, stop:1 #1168e4);
+}
+QRadioButton::indicator {
+    height: 14px;
+    width: 14px;
+    border-style:solid;
+    border-radius:7px;
+    border-width: 1px;
+}
+QRadioButton::indicator:checked {
+    border-color: #48a5fd;
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:0.4,fx:0.5, fy:0.5, stop:0 #ffffff, stop:0.5 #ffffff, stop:0.6 #48a5fd, stop:1 #48a5fd);
+}
+QRadioButton::indicator:!checked {
+    border-color: #a9b7c6;
+    background-color: #fbfdfa;
+}
+QStatusBar {
+    color:#027f7f;
+}
+
+QDial {
+    background: #16a085;
+}
+
+QToolBox {
+    color: #a9b7c6;
+    background-color: #222b2e;
+}
+QToolBox::tab {
+    color: #a9b7c6;
+    background-color:#222b2e;
+}
+QToolBox::tab:selected {
+    color: #FFFFFF;
+    background-color:#222b2e;
+}
+QScrollArea {
+    color: #FFFFFF;
+    background-color:#222b2e;
+}
+
+QScrollBar:horizontal {
+	max-height: 10px;
+	border: 1px transparent grey;
+	margin: 0px 20px 0px 20px;
+	background: transparent;
+}
+QScrollBar:vertical {
+	max-width: 10px;
+	border: 1px transparent grey;
+	margin: 20px 0px 20px 0px;
+	background: transparent;
+}
+QScrollBar::handle:vertical, QScrollBar::handle:horizontal {
+	background: #52595d;
+	border-style: transparent;
+	border-radius: 4px;
+	min-height: 25px;
+}
+QScrollBar::handle:horizontal:hover, QScrollBar::handle:vertical:hover {
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #467dd1, stop:0.5 #3b88fc, stop:1 #467dd1);
+}
+QScrollBar::add-line, QScrollBar::sub-line {
+    border: 2px transparent grey;
+    border-radius: 4px;
+    subcontrol-origin: margin;
+    background: #b9b9b9;
+}
+QScrollBar::add-line:horizontal {
+    width: 20px;
+    subcontrol-position: right;
+}
+QScrollBar::add-line:vertical {
+    height: 20px;
+    subcontrol-position: bottom;
+}
+QScrollBar::sub-line:horizontal {
+    width: 20px;
+    subcontrol-position: left;
+}
+QScrollBar::sub-line:vertical {
+    height: 20px;
+    subcontrol-position: top;
+}
+QScrollBar::add-line:vertical:pressed, QScrollBar::add-line:horizontal:pressed, QScrollBar::sub-line:horizontal:pressed, QScrollBar::sub-line:vertical:pressed {
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #467dd1, stop:0.5 #3b88fc, stop:1 #467dd1);
+}
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal, QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}
+QScrollBar::up-arrow:vertical {
+    image: url(/usr/share/icons/Adwaita/16x16/actions/go-up-symbolic.symbolic.png);
+}
+QScrollBar::down-arrow:vertical {
+    image: url(/usr/share/icons/Adwaita/16x16/actions/go-down-symbolic.symbolic.png);
+}
+QScrollBar::left-arrow:horizontal {
+    image: url(/usr/share/icons/Adwaita/16x16/actions/go-previous-symbolic.symbolic.png);
+}
+QScrollBar::right-arrow:horizontal {
+    image: url(/usr/share/icons/Adwaita/16x16/actions/go-next-symbolic.symbolic.png);
+}
+QWidget {
+  background-color: #fff;
+}
+QLabel {
+  color: #464d55;
+padding: 7px;
+  /*font-weight: 600;*/
+}
+QLabel#heading {
+  color: #0f1925;
+  /*font-size: 18px;*/
+  margin-bottom: 10px;
+}
+
+QLabel#subheading {
+  color: #0f1925;
+  font-size: 12px;
+  font-weight: normal;
+ margin-bottom: 10px; 
+}
+QLineEdit {
+  border-radius: 8px;
+  border: 1px solid #e0e4e7;
+ /* padding: 5px 15px;*/
+}
+
+QLineEdit:focus {
+  border: 1px solid #d0e3ff;
+}
+
+QLineEdit::placeholder {
+  color: #767e89;
+}
+
+Line{
+background-color: #C1C9CE;
+}
+
+QPushButton {
+ /* background-color: #0d6efd;*/
+  background-color:#328ba8;
+  color: #fff;
+ font-weight: 600;
+  border-radius: 10px;
+  border: 1px solid #328ba8;
+ padding: 5px 5px; 
+ /* margin-top: 10px;*/
+  outline: 0px;
+}
+QPushButton:hover,
+QPushButton:focus {
+  background-color: #15718f;
+  border: 3px solid #15718f;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_10">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,1,4">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+font: 700 14pt &quot;Calibri&quot;;
+padding: 0px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Upload Signal</string>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QPushButton" name="browseFilesButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>111</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>120</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+margin-top: 15px;
+margin-left: 7px;
+padding: 10px 5px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Browse Files</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Line" name="line_2">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>1</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>1</height>
+           </size>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+font: 700 14pt &quot;Calibri&quot;;
+margin: 0;
+padding: 0
+}</string>
+          </property>
+          <property name="text">
+           <string>Signal Mixer</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="bottomMargin">
+           <number>10</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+padding: 0 7px;
+margin:0
+}</string>
+            </property>
+            <property name="text">
+             <string>Frequency of Signal</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <property name="sizeConstraint">
+             <enum>QLayout::SetDefaultConstraint</enum>
+            </property>
+            <item>
+             <widget class="QSlider" name="signalFrequencySlider">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLCDNumber" name="signalFrequencyLCD">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>45</width>
+                <height>30</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_9">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+padding: 0 7px;
+margin:0
+}</string>
+            </property>
+            <property name="text">
+             <string>Amplitude of Signal</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QSlider" name="signalAmplitudeSlider">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLCDNumber" name="signalAmplitudeLCD">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>45</width>
+                <height>30</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QPushButton" name="addSignalButton">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+padding:10px
+}</string>
+          </property>
+          <property name="text">
+           <string>Add Signal</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_14">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+font: 700 14pt &quot;Calibri&quot;;
+margin-top: 10px;
+margin-bottom: 0;
+margin-right: 50px;
+margin-left: 0;
+padding: 0
+}</string>
+          </property>
+          <property name="text">
+           <string>Remove Signal Components</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="1,0">
+          <item>
+           <widget class="QComboBox" name="componentsComboBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>160</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QComboBox{
+height:27px;
+}</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>New Item</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="removeComponentsButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+padding: 7px
+}</string>
+            </property>
+            <property name="text">
+             <string>Remove </string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line_3">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>1</height>
+           </size>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <property name="bottomMargin">
+           <number>10</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_13">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+font: 700 14pt &quot;Calibri&quot;;
+padding: 0
+}</string>
+            </property>
+            <property name="text">
+             <string>Sampling</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+padding: 0 7px;
+margin:0
+}</string>
+              </property>
+              <property name="text">
+               <string>Sampling Frequency</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <property name="spacing">
+               <number>6</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QSlider" name="samplingFrequencySlider">
+                <property name="singleStep">
+                 <number>26</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="sizeConstraint">
+                 <enum>QLayout::SetDefaultConstraint</enum>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_3">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLCDNumber" name="actualFrequencyLCD">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>45</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_5">
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>35</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLabel{
+padding: 0px 2px;
+margin:0
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>Hz</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_4">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLCDNumber" name="normalizedFrequencyLCD">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>45</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_6">
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>35</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QLabel{
+padding: 0px 2px;
+margin:0
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>f max</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line_4">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>1</height>
+           </size>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <widget class="QLabel" name="label_8">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+font: 700 14pt &quot;Calibri&quot;;
+padding: 0
+}</string>
+            </property>
+            <property name="text">
+             <string>Noise Addition</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QLabel" name="label_7">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+padding: 0px 7px;
+}</string>
+              </property>
+              <property name="text">
+               <string>SNR Ratio</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <item>
+               <widget class="QSlider" name="snrSlider">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLCDNumber" name="snrLCD">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>45</width>
+                  <height>30</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line_5">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>1</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>1</height>
+           </size>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QPushButton" name="deleteSignalButton">
+          <property name="minimumSize">
+           <size>
+            <width>111</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+margin-top: 10px;
+padding: 10px 5px
+}</string>
+          </property>
+          <property name="text">
+           <string>Delete Signal</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>1</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>1</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_13" stretch="0,0">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,0">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_10">
+            <property name="rightMargin">
+             <number>10</number>
+            </property>
+            <property name="bottomMargin">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_11">
+              <property name="styleSheet">
+               <string notr="true">QLabel {
+font: 700 12pt &quot;Calibri&quot;;
+}</string>
+              </property>
+              <property name="text">
+               <string>Original Signal</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="PlotWidget" name="originalgraphicsView">
+              <property name="minimumSize">
+               <size>
+                <width>380</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>900</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_11">
+            <property name="bottomMargin">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_10">
+              <property name="styleSheet">
+               <string notr="true">QLabel {
+font: 700 12pt &quot;Calibri&quot;;
+}</string>
+              </property>
+              <property name="text">
+               <string>Reconstructed Signal</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="PlotWidget" name="reconstructedgraphicsView">
+              <property name="minimumSize">
+               <size>
+                <width>380</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>900</width>
+                <height>16777215</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_12" stretch="0,0">
+          <property name="topMargin">
+           <number>5</number>
+          </property>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QLabel" name="label_12">
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+font: 700 12pt &quot;Calibri&quot;;
+}</string>
+            </property>
+            <property name="text">
+             <string>Difference between Original and Reconstructed Signals</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="PlotWidget" name="differencegraphicsView">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>900</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1340</width>
+     <height>32</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>pyqtgraph</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../Downloads/QDarkStyleSheet-master/QDarkStyleSheet-master/qdarkstyle/dark/darkstyle.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>signalAmplitudeSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>signalAmplitudeLCD</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>307</x>
+     <y>353</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>393</x>
+     <y>359</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>signalFrequencySlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>signalFrequencyLCD</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>176</x>
+     <y>271</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>381</x>
+     <y>276</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
